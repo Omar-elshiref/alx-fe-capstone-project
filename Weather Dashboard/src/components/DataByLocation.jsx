@@ -18,6 +18,7 @@ const DataByLocation = () => {
   const apiDataByLocation = async (lat, lon) => {
     try {
       const weatherData = await FetchWeatherDataByCoordinates(lat, lon); // Fetching data using latitude and longitude
+      {weatherData && localStorage.setItem("currentCityLocation", weatherData.cityName)}
       setData(weatherData); // store the data within the state
 
       // notification every time data is successfully fetched
@@ -42,7 +43,10 @@ const DataByLocation = () => {
         }
       );
     }
-  }, []);
+  }, [])
+
+
+
 
   // Execute on component load only
   useEffect(() => {
@@ -50,7 +54,9 @@ const DataByLocation = () => {
   }, [getUserLocation]);
 
   return (
-    <>{data && localStorage.setItem("currentCityLocation", data.cityName)}</>
+    <>
+    {data && localStorage.setItem("currentCityLocation", data.cityName)}
+    </>
   );
 };
 

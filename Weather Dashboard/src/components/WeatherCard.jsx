@@ -118,7 +118,7 @@ const WeatherCard = () => {
                   );
                 } else {
                   apiData(localStorage.getItem("currentCityLocation"));
-                }
+                } 
               }}
             />
           </div>
