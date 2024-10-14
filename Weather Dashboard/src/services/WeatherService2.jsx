@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const FetchWeatherDataByCoordinates = async (lat, lon) => {
-  const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${
+  const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${
     import.meta.env.VITE_APP_ID
   }`;
 
